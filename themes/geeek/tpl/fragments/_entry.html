@@ -1,0 +1,49 @@
+	<!-- Article -->
+	<article id="{{tpl:EntryID}}" class="entry">
+	
+		<header>
+			<h1 class="entry-title"><a href="{{tpl:EntryURL}}" rel="bookmark" title="{{tpl:EntryTitle encode_html="1"}}">{{tpl:EntryTitle encode_html="1"}}</a></h1>
+			
+			<div class="entry-meta">
+			{{tpl:lang By}} <a href="{{tpl:EntryAuthorURL}}" rel="author">{{tpl:EntryAuthorCommonName}}</a> :: 
+			<time datetime="{{tpl:EntryDate iso8601="1"}}">{{tpl:EntryDate}}, {{tpl:EntryTime}}</time>
+			<tpl:EntryIf has_category="1">
+			 ::  <a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a>
+			</tpl:EntryIf>
+			</div>
+		</header>
+	
+		<div class="entry-content">	
+			<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+			{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+			<!-- # Entry with an excerpt -->
+			<tpl:EntryIf extended="1">
+			  {{tpl:EntryExcerpt}}
+			</tpl:EntryIf>
+
+			<!-- # Entry without excerpt -->
+			{{tpl:EntryContent}}
+			
+		    <!-- # --BEHAVIOR-- publicEntryAfterContent -->
+			{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+		</div>
+	
+		<footer id="footer-{{tpl:EntryID}}" class="entry-footer">
+
+			<button class="btn btn-mini pull-right share-button" data-url="{{tpl:EntryURL}}" data-text="{{tpl:EntryTitle encode_html="1"}}">
+				<img src="{{tpl:BlogThemeURL}}/img/social-share.png" alt="social share"/>
+			</button>
+
+			<!-- # Tags -->
+			<tpl:EntryTags>
+				<tpl:TagsHeader>
+					<ul class="post-tags">
+						</tpl:TagsHeader>
+							<li><a href="{{tpl:TagURL}}" rel="tag">{{tpl:TagID}}</a></li>
+						<tpl:TagsFooter>
+					</ul>
+				</tpl:TagsFooter>
+			</tpl:EntryTags>
+		</footer>
+	</article>

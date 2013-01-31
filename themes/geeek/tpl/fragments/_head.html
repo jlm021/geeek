@@ -1,0 +1,45 @@
+
+<!-- CSS Loading -->
+<link rel="stylesheet" href="{{tpl:BlogThemeURL}}/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{tpl:BlogThemeURL}}/css/main.css">
+
+<!-- Modernizr -->
+<script src="{{tpl:BlogThemeURL}}/js/vendor/modernizr.min.js"></script>
+<script type="text/javascript">
+Modernizr.load([
+  {
+    load: '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js',
+    complete: function () {
+      if ( !window.jQuery ) {
+            Modernizr.load('{{tpl:BlogThemeURL}}/js/vendor/jquery.min.js');
+      }
+    }
+  },
+  '{{tpl:BlogThemeURL}}/js/vendor/bootstrap.min.js',
+  '{{tpl:BlogThemeURL}}/js/main.js'
+]);
+</script>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-605163-4']);
+  _gaq.push(['_setDomainName', 'www.geeek.org']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function plusone_vote( obj ) {
+    _gaq.push(['_trackEvent','plusone',obj.state]);
+  }
+
+</script>
+
+
+{{tpl:SysBehavior behavior="publicHeadContent"}}

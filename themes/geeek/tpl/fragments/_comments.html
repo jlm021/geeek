@@ -1,0 +1,28 @@
+  <tpl:EntryIf show_comments="1">
+    <tpl:Comments>
+    <tpl:CommentsHeader>
+    <div id="comments">
+      <dl>
+    </tpl:CommentsHeader>
+      <dt id="c{{tpl:CommentID}}" class="{{tpl:CommentIfMe}} {{tpl:CommentIfOdd}} {{tpl:CommentIfFirst}}"><a
+      href="#c{{tpl:CommentID}}" class="comment-number">{{tpl:CommentOrderNumber}}.</a>
+      {{tpl:lang On}} {{tpl:CommentDate}}, {{tpl:CommentTime}}
+      {{tpl:lang by}} {{tpl:CommentAuthorLink}}</dt>
+      
+      <dd class="{{tpl:CommentIfMe}} {{tpl:CommentIfOdd}} {{tpl:CommentIfFirst}}">
+      <!-- # --BEHAVIOR-- publicCommentBeforeContent -->
+      {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
+      
+	  <a href="{{tpl:CommentAuthorURL}}" rel="nofollow"><img src="{{tpl:BlogThemeURL}}/img/unknown.jpg" alt="{{tpl:CommentAuthorMailMD5}}" class="gravatar img-polaroid" /></a>
+	  
+      {{tpl:CommentContent}}
+      
+      <!-- # --BEHAVIOR-- publicCommentAfterContent -->
+      {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
+      </dd>
+    <tpl:CommentsFooter>
+      </dl>
+    </div>
+    </tpl:CommentsFooter>
+    </tpl:Comments>
+  </tpl:EntryIf>

@@ -1,0 +1,36 @@
+<header>
+	<nav id="menu" class="navbar navbar-fixed-top" role="navigation">
+		<div class="navbar-inner">
+			<div class="container">
+				 
+				<ul class="nav">
+					<li class="active"><a href="/"><i class="icon-star-empty"></i> Home</a></li>
+					<li><a href="/archive">Archives</a></li>
+					<li><a href="/pages/blogroll.html">Blogs</a></li>
+					<li><a href="/pages/agenda.html">Agenda</a></li>
+					<li><a href="/pages/a-propos.html">A Propos</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+					
+				<form role="search" class="navbar-form pull-right form-search" action="/" method="get">
+				  <div class="input-append">
+					<input type="search" class="search-query input-small" maxlength="255" placeholder="rechercher" name="q" x-webkit-speech="true"/>
+					<button type="submit" class="btn"><i class="icon-search"></i></button>
+				  </div>
+				</form>
+					
+				<a href="http://feeds2.feedburner.com/blog-de-geeek" class="pull-right">
+					<img src="{{tpl:BlogThemeURL}}/img/loading.gif" alt="feedbruner" class="feedburner">
+				</a>	
+					
+			</div>
+		</div>
+	</nav>
+
+	<div id="header" class="page-header" role="banner">
+			<div class="blog-title"><a href="{{tpl:BlogURL}}"><img src="{{tpl:BlogThemeURL}}/img/logo.png" alt="Geeek blog" /></a> <strong>{</strong> Le blog d'un geek* <strong>}</strong></div>
+	</div>
+	
+	{{tpl:SysBehavior behavior="publicTopAfterContent"}}
+
+</header>

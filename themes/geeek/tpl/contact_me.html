@@ -1,0 +1,114 @@
+{{tpl:include src="fragments/_doctype.html"}}
+<head>
+
+  <title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+
+  {{tpl:include src="fragments/_meta.html"}}
+  
+  {{tpl:include src="fragments/_head.html"}}
+ 
+</head>
+
+<body>
+
+{{tpl:include src="fragments/_top.html"}}
+
+<div class="container">
+
+<div class="row">
+
+  <div id="content" class="span8">
+
+  <h1 class="entry-title">{{tpl:ContactMePageTitle encode_html="1"}}</h1>
+  
+  <div id="contact">
+  
+  <tpl:ContactMeIf sent="1">{{tpl:ContactMeMsgSuccess}}</tpl:ContactMeIf>
+  
+  <tpl:ContactMeIf error="1">{{tpl:ContactMeMsgError}}</tpl:ContactMeIf>
+  
+  <tpl:ContactMeIf sent="0">
+    {{tpl:ContactMeFormCaption}}
+    <form action="{{tpl:ContactMeURL}}" method="post" id="comment-form" class="form-horizontal">
+  
+		<div class="control-group">
+			<label class="control-label" for="c_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
+			<div class="controls">
+			 <div class="input-prepend">
+			  <span class="add-on"><i class="icon-user"></i></span>
+			  <input name="c_name" id="c_name" type="text" size="30" maxlength="255" value="{{tpl:ContactMeName encode_html="1"}}" />
+			 </div>
+			</div>
+		 </div>
+  
+		<div class="control-group">
+			<label class="control-label" for="c_mail">{{tpl:lang Email address}}&nbsp;:</label>
+			<div class="controls">
+			 <div class="input-prepend">
+				<span class="add-on"><i class="icon-envelope"></i></span>
+				<input name="c_mail" id="c_mail" type="text" size="30" maxlength="255" value="{{tpl:ContactMeEmail encode_html="1"}}"/>
+			 </div>
+			</div>
+		 </div>
+        
+		<div class="control-group">
+			<label class="control-label" for="c_site">{{tpl:lang Website}} ({{tpl:lang optional}})&nbsp;:</label>
+			<div class="controls">
+			 <div class="input-prepend">
+			  <span class="add-on"><i class="icon-share"></i></span>
+			  <input name="c_site" id="c_site" type="text" size="30" maxlength="255" value="{{tpl:ContactMeSite encode_html="1"}}"/>
+			  </div>
+			</div>
+		 </div>
+		 
+		<div class="control-group">
+			<label class="control-label" for="c_subject">{{tpl:lang Subject}}&nbsp;:</label>
+			<div class="controls">
+			 <div class="input-prepend">
+			  <span class="add-on"><i class="icon-bullhorn"></i></span>
+			  <input name="c_subject" id="c_subject" type="text" size="30" maxlength="255" value="{{tpl:ContactMeSubject encode_html="1"}}"/>
+			  </div>
+			</div>
+		 </div>
+        
+		
+		<div class="control-group">
+			<label class="control-label" for="c_message">{{tpl:lang Message}}&nbsp;:</label>
+			<div class="controls">
+			  <textarea name="c_message" id="c_message" cols="35" rows="7" class="input-xlarge">{{tpl:ContactMeMessage raw="1" encode_html="1"}}</textarea>
+			</div>
+		 </div>
+		 
+        
+        <p style="display:none"><input name="f_mail" type="text" size="30"
+        maxlength="255" value="" /></p>
+
+		      
+	  <div class="form-actions">
+		 <button type="submit" class="btn btn-primary" value="{{tpl:lang send}}"><i class="icon-ok-sign icon-white"></i> {{tpl:lang send}}</button>	  
+	  </div>
+
+    </form>
+  </tpl:ContactMeIf>
+  
+    </div><!-- End #contact -->
+	
+  </div><!-- End #content -->
+  
+  {{tpl:include src="fragments/_sidebar.html"}}
+  
+</div> <!-- End #main -->
+
+</div> <!-- End #container -->
+
+{{tpl:include src="fragments/_bottombar.html"}}
+
+{{tpl:include src="fragments/_footer.html"}}
+
+{{tpl:include src="fragments/_asyncjs.html"}}
+
+</body>
+</html>
+
+
+
